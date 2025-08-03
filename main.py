@@ -30,20 +30,21 @@ async def send_to_target_channel(message):
 @bot.event
 async def on_member_join(member):
     alert = (
-        f"🎉 **New Member Joined**\n"
-        f"Server: {member.guild.name}\n"
-        f"User: {member}"
+        f"🔔 New member joined {member.guild.name}\n"
+        f"👤 Username: {member}\n"
+        f"🆔 ID: {member.id}"
     )
+
     await send_to_target_channel(alert)
 
-@bot.event
-async def on_member_remove(member):
-    alert = (
-        f"❌ **Member Left**\n"
-        f"Server: {member.guild.name}\n"
-        f"User: {member}"
-    )
-    await send_to_target_channel(alert)
+# @bot.event
+# async def on_member_remove(member):
+#     alert = (
+#         f"❌ **Member Left**\n"
+#         f"Server: {member.guild.name}\n"
+#         f"User: {member}"
+#     )
+#     await send_to_target_channel(alert)
 
 
 from flask import Flask
